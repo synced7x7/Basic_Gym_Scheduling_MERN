@@ -58,3 +58,13 @@ exports.scheduleWorkout = async (req, res) => {
     workout,
   });
 };
+
+exports.getAllSchedules = async (req, res) => {
+  try {
+    const schedules = await ScheduledWorkout.find()
+    res.json(schedules);
+  } catch (error) {
+    console.error("Error fetching schedules:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};

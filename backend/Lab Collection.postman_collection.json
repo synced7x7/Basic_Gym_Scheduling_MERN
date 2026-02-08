@@ -1,0 +1,209 @@
+{
+	"info": {
+		"_postman_id": "53dc138d-286f-4ac3-aa07-509b0574dd4a",
+		"name": "Lab Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50752447",
+		"_collection_link": "https://tasnifemran-8380977.postman.co/workspace/Project-Odyssey's-Workspace~b8be2e11-940f-4076-8753-535caea63a92/collection/50752447-53dc138d-286f-4ac3-aa07-509b0574dd4a?action=share&source=collection_link&creator=50752447"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Post User",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"name\": \"Sami\", \"email\": \"sami@gmail.com\", \"age\": 35, \"active\": false }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Trainer",
+			"item": [
+				{
+					"name": "Post Trainer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"name\": \"Alex\", \"email\": \"alex@fit.com\", \"specialization\": [\"crossfit\"], \"experienceYears\": 6, \"hourlyRate\": 30 }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/trainers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"trainers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Trainers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/trainers/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"trainers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Trainer By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/trainers/694e5339e49fa92af847ef70",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"trainers",
+								"694e5339e49fa92af847ef70"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Trainer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"hourlyRate\": 30,\r\n  \"available\": true,\r\n  \"certifications\": [\r\n    \"NASM\",\r\n    \"CrossFit Level 1\"\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/trainers/694e5339e49fa92af847ef70",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"trainers",
+								"694e5339e49fa92af847ef70"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Trainer By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/trainers/694e5339e49fa92af847ef70",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"trainers",
+								"694e5339e49fa92af847ef70"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Schedule",
+			"item": [
+				{
+					"name": "Schedule Workout Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"694e52b0e49fa92af847ef64\",\r\n  \"trainerId\": \"694e5332e49fa92af847ef6e\",\r\n  \"scheduledAt\": \"2026-01-05T10:00:00.000Z\",\r\n  \"workoutTypes\": [\"cardio\", \"strength\"],\r\n  \"notes\": \"Focus on weight loss\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/schedule",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"schedule"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

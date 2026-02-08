@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 
+// Enable CORS for all routes
+app.use(cors());
 require('dotenv').config();
 const PORT = process.env.PORT || 3000;
 
@@ -23,7 +26,7 @@ app.listen(PORT, () => {
 
 
 
-//routes
+//rouz
 const router = require('./routes/workoutRoutes');
 const userRoutes = require("./routes/userRoutes");
 const trainerRoutes =  require("./routes/trainerRoutes");
